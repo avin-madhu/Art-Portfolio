@@ -25,8 +25,8 @@ const heroStyles = {
 };
 
 const logoStyles = {
-  width: "400px",
-  height: "200px",
+  width: "300px",
+  height: "100px",
   zIndex: "1"
 };
 
