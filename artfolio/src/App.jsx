@@ -13,13 +13,7 @@ const AppContainer = styled.div`
   color: #333;
   background-color: black;
   min-height: 100vh;
-`;
-
-const Header = styled.header`
-  text-align: center;
-  padding: 2rem 0;
-  font-size: 2rem;
-  font-weight: bold;
+  position: relative;
 `;
 
 const heroStyles = {
@@ -33,7 +27,7 @@ const heroStyles = {
 const logoStyles = {
   width: "400px",
   height: "200px",
-  zIndex: 1
+  zIndex: "1"
 };
 
 const subline = {
@@ -46,6 +40,26 @@ const subline = {
   fontSize: "23px",
   marginTop: "-30px",
   color: "grey",
+}
+
+const headerStyles = {
+  position: "sticky",
+  top: "0",
+  display: "flex",
+  flexDirection: "column",
+  zIndex: "1000",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "rgba(0, 0, 0, 0.25)",
+  backdropFilter: "blur(10px)",
+  WebkitBackdropFilter: "blur(10px)", 
+  padding: "20px",
+  boxShadow: "0 8px 32px 0 rgba(255,255,255, 0.10)", 
+};
+
+const artworkGridStyles = {
+     position: "relative",
+     zIndex: "1"
 }
 
 const artworks = [
@@ -101,17 +115,22 @@ function App() {
     });
   }, []);
 
+
+
   return (
     <>
       <GlobalStyles />
       <AppContainer>
         <div style={heroStyles}>
-          <Header>
+            <div style={headerStyles}>
               <img data-aos = "fade-up" style={logoStyles} src={avinartzlogo} alt="logo" />
-            </Header>
-            <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
+              <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
+            </div> 
         </div>
-        <ArtworkGrid artworks={artworks} />
+        <div style={artworkGridStyles} >
+             <ArtworkGrid artworks={artworks} />
+        </div>
+        
       </AppContainer>
     </>
   );
