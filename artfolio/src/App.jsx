@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
 import ArtworkGrid from "./components/ArtworkGrid";
-import avinartzlogo from "./assets/avinartzlogo.png";
+import avinartzlogo from "/assets/avinartzlogo.png";
 import GlobalStyles from "./components/scrollBar";
 import "./App.css";
 import AOS from 'aos';
@@ -63,46 +63,46 @@ const artworkGridStyles = {
 }
 
 const artworks = [
-  { id: 1, title: "Artwork 1", image: "src/artworks/art1.png" },
+  { id: 1, title: "Artwork 1", image: "/assets/artworks/art1.png" },
   {
     id: 2,
     title: "Artwork 2",
-    image: "src/artworks/art2.png",
+    image: "/assets/artworks/art2.png",
   },
   {
     id: 3,
     title: "Artwork 3",
-    image: "src/artworks/art4.jpg",
+    image: "/assets/artworks/art4.jpg",
   },
   {
     id: 4,
     title: "Artwork 4",
-    image: "src/artworks/art10.jpg",
+    image: "/assets/artworks/art10.jpg",
   },
   {
     id: 5,
     title: "Artwork 5",
-    image: "src/artworks/art14.png",
+    image: "/assets/artworks/art14.png",
   },
   {
     id: 6,
     title: "Artwork 6",
-    image: "src/artworks/art16.jpg",
+    image: "/assets/artworks/art16.jpg",
   },
   {
     id: 7,
     title: "Artwork 6",
-    image: "src/artworks/art15.png",
+    image: "/assets/artworks/art15.png",
   },
   {
     id: 8,
     title: "Artwork 6",
-    image: "src/artworks/art13.png",
+    image: "/assets/artworks/art13.png",
   },
   {
     id: 9,
     title: "Artwork 6",
-    image: "src/artworks/art12.png",
+    image: "/assets/artworks/art12.png",
   },
 ];
 
