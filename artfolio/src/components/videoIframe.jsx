@@ -45,7 +45,7 @@ const VideoIframe = ({ src }) => {
     <iframe
       ref={iframeRef}
       src={src}
-      width="640"
+      width="540"
       height="360"
       title="Video Iframe"
       style={{ border: "none" }}
