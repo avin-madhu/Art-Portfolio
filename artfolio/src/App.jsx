@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect} from "react";
 import styled from "styled-components";
 import ArtworkGrid from "./components/ArtworkGrid";
 import avinartzlogo from "/assets/avinartzlogo.png";
@@ -7,15 +6,18 @@ import GlobalStyles from "./components/scrollBar";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
 
 function App() {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true, 
+      duration: 1000,
+      once: true,
+      mirror: true,
+      offset: 120
     });
+    AOS.refresh();
   }, []);
 
   return (
@@ -24,21 +26,48 @@ function App() {
       <Navbar />
       <AppContainer>
         <div style={heroStyles}>
-            <div style={headerStyles}>
-              <img data-aos = "fade-up" data-duration = "2000" style={logoStyles} src={avinartzlogo} alt="logo" />
-              <br />
-              <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
-            </div> 
+          <div style={headerStyles}>
+            <img data-aos="fade-up" style={logoStyles} src={avinartzlogo} alt="logo" />
+            <br />
+            <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
+          </div>
         </div>
-        <div style={artworkGridStyles} >
-             <ArtworkGrid artworks={artworks} />
-             <button style={seeMoreBtnStyles}>See More</button>
+        <div data-aos-duration="200" data-aos-delay="3000" style={artworkGridStyles} >
+          <ArtworkGrid artworks={artworks} />
+          <button style={seeMoreBtnStyles}>See More</button>
         </div>
-        <div style={space}>
-
-        </div>
+        <div style={space}></div>
         <div style={footerStyles}>
-
+          <div className="footer">
+            <div className="footer-content">
+              <div className="footer-section about">
+                <h3>Avinartz</h3>
+                <p className="textContent">This is the Portfolio of Avinartz that is to be dedicated to showcase digital and artworks of various mediums. </p>
+              </div>
+              <div className="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="#portfolio">Portfolio</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#commissions">Commissions</a></li>
+                </ul>
+              </div>
+              <div className="footer-section contact">
+                <h3>Contact</h3>
+                <p className="textContent"><i className="fa fa-envelope"></i> avinmadhu@gmail.com</p>
+                <p className="textContent"><i className="fa fa-phone"></i> +91 79024-67901</p>
+                <div className="social-icons">
+                  <a href="#"><i className="fab fa-instagram"></i></a>
+                  <a href="#"><i className="fab fa-twitter"></i></a>
+                  <a href="#"><i className="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div className="footer-bottom">
+              <p>&copy; 2024 Avin.artz All rights reserved.</p>
+            </div>
+          </div>
         </div>
       </AppContainer>
     </>
@@ -92,15 +121,15 @@ const headerStyles = {
   justifyContent: "center",
   background: "rgba(0, 0, 0, 0.25)",
   backdropFilter: "blur(10px)",
-  WebkitBackdropFilter: "blur(10px)", 
+  WebkitBackdropFilter: "blur(10px)",
   padding: "20px",
 };
 
 const artworkGridStyles = {
-     display: "flex",
-     flexDirection: "column",
-     alignItems: "center",
-     justifyContent: "center"
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center"
 }
 
 const seeMoreBtnStyles = {
@@ -114,14 +143,6 @@ const seeMoreBtnStyles = {
   fontSize: "15px",
   width: "100px",
   cursor: "pointer",
-
-  ':hover': {
-    color: '#1a1a1a',
-    background: '#white',
-    borderColor: '#white',
-    border: "cyan solid 5px"
-  },
-
 }
 
 const space = {
@@ -131,7 +152,7 @@ const space = {
 }
 
 const footerStyles = {
-  border: "white solid 2px 0px 0px 0px",
+  borderTop: "grey solid 1px",
   position: "absolute",
   bottom: "0px",
   width: "100%",
