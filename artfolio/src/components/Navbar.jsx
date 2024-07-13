@@ -76,7 +76,7 @@ const Menu = styled(motion.div)`
     flex-direction: column;
     width: 100%;
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
-    transition: max-height 0.3s ease-in;
+    transition: max-height 1.0s ease-in;
   }
 `;
 
