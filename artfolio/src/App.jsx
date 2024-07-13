@@ -1,9 +1,13 @@
 import React, { useEffect} from "react";
+import {BrowserRouter as Router, Route, Routes, useNavigate} from 'react-router-dom';
 import styled from "styled-components";
 import ArtworkGrid from "./components/ArtworkGrid";
 import avinartzlogo from "/assets/avinartzlogo.png";
 import GlobalStyles from "./components/scrollBar";
 import Navbar from "./components/Navbar";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import "./App.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -23,7 +27,14 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Navbar />
+      <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Gallery" element={<Gallery />} />
+      </Routes>
+    </Router>
       <AppContainer>
         <div style={heroStyles}>
           <div style={headerStyles}>
@@ -34,7 +45,7 @@ function App() {
         </div>
         <div data-aos-duration="200" data-aos-delay="3000" style={artworkGridStyles} >
           <ArtworkGrid artworks={artworks} />
-          <button style={seeMoreBtnStyles}>See More</button>
+            <button style={seeMoreBtnStyles} >See More</button>
         </div>
         <div style={space}></div>
         <div style={footerStyles}>

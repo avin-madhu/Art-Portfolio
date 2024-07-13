@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -14,17 +15,22 @@ const Navbar = () => {
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink href="/about">About</MenuLink>
-        <MenuLink href="/contact">Contact</MenuLink>
+        <MenuLink><Link style={linkStyles} to="/Contact">Contact</Link></MenuLink>
+        <MenuLink><Link style={linkStyles} to="/Gallery">Gallery</Link></MenuLink>
       </Menu>
     </Nav>
   );
 };
 
+const linkStyles = {
+  textDecoration: "none",
+  color: "white",
+}
+
 const Nav = styled.nav`
   position: sticky;
   top: 0;
-  z-index: 2000;
+  z-index: 3001;
   padding: 0 2rem;
   display: flex;
   backdrop-filter: blur(10px);
@@ -76,7 +82,7 @@ const Menu = styled(motion.div)`
     flex-direction: column;
     width: 100%;
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
-    transition: max-height 0.5s ease-in;
+    transition: max-height 0.3s ease-in;
   }
 `;
 
