@@ -2,9 +2,7 @@ import React from 'react'
 
 export default function Contact() {
   return (
-    <div style={contactStyles}>
-      
-    </div>
+    <div style={contactStyles}></div>
   )
 }
 

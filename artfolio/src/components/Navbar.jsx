@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [galleryOpen, setgalleryOpen] = useState(false)
 
   return (
     <Nav>
@@ -15,8 +16,8 @@ const Navbar = () => {
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink><Link style={linkStyles} to="/Contact">Contact</Link></MenuLink>
-        <MenuLink><Link style={linkStyles} to="/Gallery">Gallery</Link></MenuLink>
+        <MenuLink><Link onClick={()=>setIsOpen(!isOpen)} style={linkStyles} to="/Contact">Contact</Link></MenuLink>
+        <MenuLink><Link onclick={()=>setgalleryOpen(!galleryOpen)} onClick={()=>setIsOpen(!isOpen)} style={linkStyles} to="/Gallery">Gallery</Link></MenuLink>
       </Menu>
     </Nav>
   );

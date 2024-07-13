@@ -1,5 +1,5 @@
-import React, { useEffect} from "react";
-import {BrowserRouter as Router, Route, Routes, useNavigate} from 'react-router-dom';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styled from "styled-components";
 import ArtworkGrid from "./components/ArtworkGrid";
 import avinartzlogo from "/assets/avinartzlogo.png";
@@ -28,13 +28,13 @@ function App() {
     <>
       <GlobalStyles />
       <Router>
-      <Navbar/>
-      <Routes>
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Gallery" element={<Gallery />} />
-      </Routes>
-    </Router>
+        <Navbar />
+        <Routes>
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Gallery" element={<Gallery />} />
+        </Routes>
+      </Router>
       <AppContainer>
         <div style={heroStyles}>
           <div style={headerStyles}>
@@ -45,7 +45,7 @@ function App() {
         </div>
         <div data-aos-duration="200" data-aos-delay="3000" style={artworkGridStyles} >
           <ArtworkGrid artworks={artworks} />
-            <button style={seeMoreBtnStyles} >See More</button>
+          <button style={seeMoreBtnStyles} >See More</button>
         </div>
         <div style={space}></div>
         <div style={footerStyles}>
