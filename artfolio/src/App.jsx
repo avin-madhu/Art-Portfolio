@@ -32,6 +32,13 @@ function App() {
         </div>
         <div style={artworkGridStyles} >
              <ArtworkGrid artworks={artworks} />
+             <button style={seeMoreBtnStyles}>See More</button>
+        </div>
+        <div style={space}>
+
+        </div>
+        <div style={footerStyles}>
+
         </div>
       </AppContainer>
     </>
@@ -90,18 +97,47 @@ const headerStyles = {
 };
 
 const artworkGridStyles = {
-     position: "relative",
-     zIndex: "1"
+     display: "flex",
+     flexDirection: "column",
+     alignItems: "center",
+     justifyContent: "center"
 }
 
-const bgvidStyles = {
-  position: 'absolute',
-  left: '50%',
-  width: '100%',
-  height: '150px',
-  objectFit: 'cover',
-  transform: 'translate(-50%, -50%)',
-  zIndex: '-1',
+const seeMoreBtnStyles = {
+  backgroundColor: "black",
+  marginTop: "20px",
+  color: "white",
+  padding: "1rem",
+  border: " white solid 2px",
+  borderRadius: "10px",
+  fontFamily: "teko, cursive",
+  fontSize: "15px",
+  width: "100px",
+  cursor: "pointer",
+
+  ':hover': {
+    color: '#1a1a1a',
+    background: '#white',
+    borderColor: '#white',
+    border: "cyan solid 5px"
+  },
+
+}
+
+const space = {
+  height: "100px",
+  width: "100%",
+  marginTop: "260px"
+}
+
+const footerStyles = {
+  border: "white solid 2px 0px 0px 0px",
+  position: "absolute",
+  bottom: "0px",
+  width: "100%",
+  height: "300px",
+  backgroundColor: "black",
+  boxShadow: "10px 20px 4px  rgba(255, 255, 255, 0.3)"
 }
 
 const artworks = [
@@ -116,34 +152,34 @@ const artworks = [
     title: "Artwork 3",
     image: "/assets/artworks/art4.jpg",
   },
-  {
-    id: 4,
-    title: "Artwork 4",
-    image: "/assets/artworks/art10.jpg",
-  },
-  {
-    id: 5,
-    title: "Artwork 5",
-    image: "/assets/artworks/art14.png",
-  },
-  {
-    id: 6,
-    title: "Artwork 6",
-    image: "/assets/artworks/art16.jpg",
-  },
-  {
-    id: 7,
-    title: "Artwork 6",
-    image: "/assets/artworks/art15.png",
-  },
-  {
-    id: 8,
-    title: "Artwork 6",
-    image: "/assets/artworks/art13.png",
-  },
-  {
-    id: 9,
-    title: "Artwork 6",
-    image: "/assets/artworks/art12.png",
-  },
+  // {
+  //   id: 4,
+  //   title: "Artwork 4",
+  //   image: "/assets/artworks/art10.jpg",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Artwork 5",
+  //   image: "/assets/artworks/art14.png",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Artwork 6",
+  //   image: "/assets/artworks/art16.jpg",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Artwork 6",
+  //   image: "/assets/artworks/art15.png",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Artwork 6",
+  //   image: "/assets/artworks/art13.png",
+  // },
+  // {
+  //   id: 9,
+  //   title: "Artwork 6",
+  //   image: "/assets/artworks/art12.png",
+  // },
 ];
