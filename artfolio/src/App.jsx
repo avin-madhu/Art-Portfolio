@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import VideoIframe from "./components/videoIframe";
 import "./App.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -43,6 +44,9 @@ function App() {
             <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
           </div>
         </div>
+       <div style={iframeContainer}>
+          <VideoIframe style={iframesStyles} src={"https://lottie.host/embed/87e2422a-529e-40e7-a891-3d708745ca19/HYKB2oNa4s.json"}/>
+       </div>
         <div data-aos-duration="200" data-aos-delay="3000" style={artworkGridStyles} >
           <ArtworkGrid artworks={artworks} />
           <button style={seeMoreBtnStyles} >See More</button>
@@ -86,6 +90,24 @@ function App() {
 }
 
 export default App;
+
+const iframeContainer = {
+  width:"100%",
+  height: "400px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  marginTop: "-600px",
+  marginBottom: "100px",
+  backgroundColor: "black"
+}
+
+const iframesStyles = {
+     height: "100%",
+     width: "400px",
+     background: "transparent",
+     border: "none"
+}
 
 const AppContainer = styled.div`
   font-family: "Arial", sans-serif;
