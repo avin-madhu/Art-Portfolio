@@ -4,9 +4,41 @@ import styled from "styled-components";
 import ArtworkGrid from "./components/ArtworkGrid";
 import avinartzlogo from "/assets/avinartzlogo.png";
 import GlobalStyles from "./components/scrollBar";
+import Navbar from "./components/Navbar";
 import "./App.css";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import AOS styles
+import 'aos/dist/aos.css'; 
+
+function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true, 
+    });
+  }, []);
+
+  return (
+    <>
+      <GlobalStyles />
+      <Navbar />
+      <AppContainer>
+        <div style={heroStyles}>
+          <video style={bgvidStyles} src="./assets/bgvid.mp4" autoPlay loop muted></video>
+            <div style={headerStyles}>
+              <img data-aos = "fade-up" data-duration = "2000" style={logoStyles} src={avinartzlogo} alt="logo" />
+              <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
+            </div> 
+        </div>
+        <div style={artworkGridStyles} >
+             <ArtworkGrid artworks={artworks} />
+        </div>
+      </AppContainer>
+    </>
+  );
+}
+
+export default App;
 
 const AppContainer = styled.div`
   font-family: "Arial", sans-serif;
@@ -18,10 +50,11 @@ const AppContainer = styled.div`
 
 const heroStyles = {
   width: "100%",
-  height: "800px",
+  height: "400px",
   backgroundColor: "transparent",
   backgroundSize: "cover",
   backgroundPosition: "center",
+  marginBottom: "400px",
 };
 
 const logoStyles = {
@@ -34,7 +67,7 @@ const subline = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  fontFamily: "Shadows Into Light, curive",
+  fontFamily: "teko, cursive",
   fontWeight: "400",
   fontStyle: "normal",
   fontSize: "23px",
@@ -43,7 +76,6 @@ const subline = {
 }
 
 const headerStyles = {
-  position: "sticky",
   top: "0",
   display: "flex",
   flexDirection: "column",
@@ -54,12 +86,21 @@ const headerStyles = {
   backdropFilter: "blur(10px)",
   WebkitBackdropFilter: "blur(10px)", 
   padding: "20px",
-  boxShadow: "0 8px 32px 0 rgba(255,255,255, 0.10)", 
 };
 
 const artworkGridStyles = {
      position: "relative",
      zIndex: "1"
+}
+
+const bgvidStyles = {
+  position: 'absolute',
+  left: '50%',
+  width: '100%',
+  height: '150px',
+  objectFit: 'cover',
+  transform: 'translate(-50%, -50%)',
+  zIndex: '-1',
 }
 
 const artworks = [
@@ -105,35 +146,3 @@ const artworks = [
     image: "/assets/artworks/art12.png",
   },
 ];
-
-function App() {
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, 
-      once: true, 
-    });
-  }, []);
-
-
-
-  return (
-    <>
-      <GlobalStyles />
-      <AppContainer>
-        <div style={heroStyles}>
-            <div style={headerStyles}>
-              <img data-aos = "fade-up" style={logoStyles} src={avinartzlogo} alt="logo" />
-              <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
-            </div> 
-        </div>
-        <div style={artworkGridStyles} >
-             <ArtworkGrid artworks={artworks} />
-        </div>
-        
-      </AppContainer>
-    </>
-  );
-}
-
-export default App;
