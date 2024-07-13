@@ -12,14 +12,22 @@ body{
   }
   
   .footer-content {
-    
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     max-width: 1000px;
     margin: 0 auto;
-
   }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      padding:10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+       }
+    }
   
   .footer-section {
    
