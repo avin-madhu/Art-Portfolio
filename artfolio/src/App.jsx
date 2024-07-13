@@ -57,7 +57,7 @@ function App() {
             <div className="footer-content">
               <div className="footer-section about">
                 <h3>Avinartz</h3>
-                <p className="textContent">This is the Portfolio of Avinartz that is to be dedicated to showcase digital and artworks of various mediums. </p>
+                <p className="textContent">This is the Portfolio of Avinartz that is to showcase digital and artworks of various mediums. </p>
               </div>
               <div className="footer-section links">
                 <h3>Quick Links</h3>
