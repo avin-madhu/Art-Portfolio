@@ -24,9 +24,9 @@ function App() {
       <Navbar />
       <AppContainer>
         <div style={heroStyles}>
-          <video style={bgvidStyles} src="./assets/bgvid.mp4" autoPlay loop muted></video>
             <div style={headerStyles}>
               <img data-aos = "fade-up" data-duration = "2000" style={logoStyles} src={avinartzlogo} alt="logo" />
+              <br />
               <p data-aos="fade-up" style={subline}>I sketch, therefore I am</p>
             </div> 
         </div>
@@ -58,9 +58,10 @@ const heroStyles = {
 };
 
 const logoStyles = {
-  width: "300px",
+  width: "270px",
   height: "100px",
-  zIndex: "1"
+  zIndex: "1",
+  marginBottom: "10px",
 };
 
 const subline = {
