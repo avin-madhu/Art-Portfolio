@@ -16,17 +16,23 @@ const Navbar = () => {
         <span />
       </Hamburger>
       <Menu isOpen={isOpen}>
-        <MenuLink><Link onClick={()=>setIsOpen(!isOpen)} style={linkStyles} to="/Contact">Contact</Link></MenuLink>
-        <MenuLink><Link onclick={()=>setgalleryOpen(!galleryOpen)} onClick={()=>setIsOpen(!isOpen)} style={linkStyles} to="/Gallery">Gallery</Link></MenuLink>
+        {/* <MenuLink><Link to="/Contact"><LinkStyle>Contact</LinkStyle></Link></MenuLink> */}
+        <MenuLink><Link to="/Gallery"><LinkStyle>Gallery</LinkStyle></Link></MenuLink>
       </Menu>
     </Nav>
   );
 };
 
-const linkStyles = {
-  textDecoration: "none",
-  color: "white",
-}
+const LinkStyle = styled.a`
+  text-decoration: none;
+  color: white;
+  padding: 1rem 0;
+  font-family: 'teko',cursive;
+  transition: all 0.3s ease-in;
+  &:hover {
+    color: #6f8dbd;
+  }
+`;
 
 const Nav = styled.nav`
   position: sticky;
@@ -92,11 +98,10 @@ const MenuLink = styled.a`
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: #fff;
   transition: all 0.3s ease-in;
   font-size: 1.2rem;
   &:hover {
-    color: cyan;
+    color: #6f8dbd;
   }
 `;
 

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styled from "styled-components";
 import ArtworkGrid from "./components/ArtworkGrid";
@@ -6,7 +7,7 @@ import avinartzlogo from "/assets/avinartzlogo.png";
 import GlobalStyles from "./components/scrollBar";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
+// import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import VideoIframe from "./components/videoIframe";
 import "./App.css";
@@ -32,11 +33,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
+          {/* <Route path="/Contact" element={<Contact />} /> */}
           <Route path="/Gallery" element={<Gallery />} />
         </Routes>
-      </Router>
-      <AppContainer>
+        <AppContainer>
         <div style={heroStyles}>
           <div style={headerStyles}>
             <img data-aos="fade-up" style={logoStyles} src={avinartzlogo} alt="logo" />
@@ -49,7 +49,10 @@ function App() {
        </div>
         <div data-aos-duration="200" data-aos-delay="3000" style={artworkGridStyles} >
           <ArtworkGrid artworks={artworks} />
+          <Link to="/Gallery">
           <button style={seeMoreBtnStyles} >See More</button>
+          </Link>
+          
         </div>
         <div style={space}></div>
         <div style={footerStyles}>
@@ -73,9 +76,9 @@ function App() {
                 <p className="textContent"><i className="fa fa-envelope"></i> avinmadhu@gmail.com</p>
                 <p className="textContent"><i className="fa fa-phone"></i> +91 79024-67901</p>
                 <div className="social-icons">
-                  <a href="#"><i className="fab fa-instagram"></i></a>
-                  <a href="#"><i className="fab fa-twitter"></i></a>
-                  <a href="#"><i className="fab fa-linkedin"></i></a>
+                  <a href="https://instagram.com/avin.artz"><i className="fab fa-instagram"></i></a>
+                  <a href="https://linkedin.com/in/avin-madhu"><i className="fab fa-linkedin"></i></a>
+                  <a href="https://github.com/avin-madhu"><i className="fab fa-github"></i></a>
                 </div>
               </div>
             </div>
@@ -85,6 +88,8 @@ function App() {
           </div>
         </div>
       </AppContainer>
+      </Router>
+      
     </>
   );
 }
