@@ -50,7 +50,7 @@ function App() {
         <div data-aos-duration="200" data-aos-delay="3000" style={artworkGridStyles} >
           <ArtworkGrid artworks={artworks} />
           <Link to="/Gallery">
-          <button style={seeMoreBtnStyles} >See More</button>
+          <button className="seeMoreBtn" style={seeMoreBtnStyles} >See More</button>
           </Link>
           
         </div>
@@ -60,7 +60,7 @@ function App() {
             <div className="footer-content">
               <div className="footer-section about">
                 <h3>Avinartz</h3>
-                <p className="textContent">This is the Portfolio of Avinartz that is to showcase digital and artworks of various mediums. </p>
+                <p className="textContent">This is the Portfolio of Avinartz showcasing digital and artworks of various mediums. </p>
               </div>
               <div className="footer-section links">
                 <h3>Quick Links</h3>
@@ -74,7 +74,7 @@ function App() {
               <div className="footer-section contact">
                 <h3>Contact</h3>
                 <p className="textContent"><i className="fa fa-envelope"></i> avinmadhu@gmail.com</p>
-                <p className="textContent"><i className="fa fa-phone"></i> +91 79024-67901</p>
+                <p className="textContent"><i className="fa fa-phone"></i> +91 7902467901</p>
                 <div className="social-icons">
                   <a href="https://instagram.com/avin.artz"><i className="fab fa-instagram"></i></a>
                   <a href="https://linkedin.com/in/avin-madhu"><i className="fab fa-linkedin"></i></a>
@@ -200,16 +200,16 @@ const footerStyles = {
 }
 
 const artworks = [
-  { id: 1, title: "Artwork 1", image: "/assets/artworks/art1.png" },
+  { id: 1, title: "Artwork 1", image: "/assets/artworks/1.jpg" },
   {
     id: 2,
     title: "Artwork 2",
-    image: "/assets/artworks/art2.png",
+    image: "/assets/artworks/2.jpg",
   },
   {
     id: 3,
     title: "Artwork 3",
-    image: "/assets/artworks/art4.jpg",
+    image: "/assets/artworks/3.jpg",
   },
   // {
   //   id: 4,
