@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import styled from "styled-components";
@@ -13,9 +13,15 @@ import VideoIframe from "./components/videoIframe";
 import "./App.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import galleryGrid from "./components/GalleryGrid";
 
 function App() {
+  var [seeMore, seeMorefn] = useState(false)
 
+  function seeMoreAction(value){
+    window.location.href = "#top"
+    seeMorefn(value)
+  }
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -47,10 +53,11 @@ function App() {
        <div style={iframeContainer}>
           <VideoIframe style={iframesStyles} src={"https://lottie.host/embed/87e2422a-529e-40e7-a891-3d708745ca19/HYKB2oNa4s.json"}/>
        </div>
+       {<galleryGrid/> && seeMore}
         <div data-aos-duration="200" data-aos-delay="3000" style={artworkGridStyles} >
           <ArtworkGrid artworks={artworks} />
           <Link to="/Gallery">
-          <button className="seeMoreBtn" style={seeMoreBtnStyles} >See More</button>
+          <button className="seeMoreBtn" onClick={() => seeMoreAction(!seeMore)} style={seeMoreBtnStyles} >See More</button>
           </Link>
           
         </div>

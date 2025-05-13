@@ -83,6 +83,11 @@ const Gallery = () => {
   const indexOfFirstArtwork = indexOfLastArtwork - artworksPerPage;
   const currentArtworks = galleryArtworks.slice(indexOfFirstArtwork, indexOfLastArtwork);
   const paginate = pageNumber => setCurrentPage(pageNumber);
+
+  function pageinate_extra(i){
+    window.location.href = "#top"
+    paginate((i + 1)%artworksPerPage)
+  }
   return (
     <div style={galleryStyles}>
       <GalleryGrid galleryArtworks={currentArtworks} />
@@ -90,7 +95,7 @@ const Gallery = () => {
         {[...Array(Math.ceil(galleryArtworks.length / artworksPerPage))].map((e, i) => (
           <button
             key={i}
-            onClick={() => paginate((i + 1)%artworksPerPage)}
+            onClick={() => pageinate_extra(i)}
             className={currentPage === (i + 1)%artworksPerPage ? 'active' : ''}
           >
           {i + 1}
