@@ -10,7 +10,6 @@ const Grid = styled.div`
   gap: 0.5rem;
   padding: 2rem;
   margin: 0 auto;
-  // background-color: #f0f0f0;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
