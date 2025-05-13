@@ -7,7 +7,7 @@ import GalleryGrid from '../components/GalleryGrid';
 const galleryStyles = {
   position: "absolute",
   zIndex: "3000",
-  height: "250vh",
+  height: "300vh",
   width: "100%",
   backgroundColor: "black"
 }
