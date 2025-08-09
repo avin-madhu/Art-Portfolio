@@ -207,11 +207,11 @@ const footerStyles = {
 }
 
 const artworks = [
-  { id: 1, title: "Artwork 1", image: "/assets/artworks/1.jpg" },
+  { id: 1, title: "Artwork 1", image: "/assets/artworks/17.jpg" },
   {
     id: 2,
     title: "Artwork 2",
-    image: "/assets/artworks/2.jpg",
+    image: "/assets/artworks/16.jpg",
   },
   {
     id: 3,
